@@ -27,7 +27,6 @@ firmware/
   reader/                       Reader firmware (Arduino sketch, STM32duino)
     reader.ino                  ST25R3916B setup, polling schedule, logging
     uart_rz.ino                 Same RZ codec, bound to the NFC UART
-  board-definition/boards.txt   Arduino board definition for the tag MCU
 ```
 
 Component values are on the schematic; no separate bill of materials is provided.
@@ -57,13 +56,28 @@ part of the circuit.
 Arduino sketch for the ATmega328P. Set `TAG_NUM` (0, 1, 2, ...) to give each tag a distinct address
 before flashing.
 
-The tag MCU runs from its internal 8 MHz RC oscillator, with no external crystal. The board is not
-in the stock Arduino list, so install `firmware/board-definition/boards.txt` as a sketchbook
-hardware add-on: create `<sketchbook>/hardware/breadboard/avr/` and copy the file into it, then
-restart the IDE and select **ATmega328 on a breadboard (8 MHz internal clock)**. The definition sets
-`f_cpu` to 8 MHz and the fuses to `low = 0xE2`, `high = 0xDA`, `extended = 0x05`, i.e. internal RC
-without the divide-by-8 prescaler and brown-out detection at 2.7 V. Burn the bootloader once with
-this board selected before uploading the sketch.
+The tag MCU runs from its internal 8 MHz RC oscillator, with no external crystal, so it is not in
+the stock Arduino board list. We use the **ATmega328 on a breadboard (8 MHz internal clock)**
+definition distributed by Arduino as `breadboard-1-6-x.zip`, available from
+<https://www.arduino.cc/en/uploads/Tutorial/breadboard-1-6-x.zip> and described at
+<https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoToBreadboard/>. It is not redistributed
+here, since its licence is not stated.
+
+That page describes a procedure for an older IDE, which places the definition in the sketchbook
+`hardware/` folder. With IDE 2.x this did not work for us. What did work was extracting the archive
+into the Arduino data directory instead, giving `.../packages/breadboard/avr/` containing
+`boards.txt`, `bootloaders/` and `variants/`:
+
+| Platform | Directory |
+| --- | --- |
+| Windows | `%LOCALAPPDATA%\Arduino15\packages\` |
+| Linux | `$HOME/.arduino15/packages/` |
+| macOS | `~/Library/Arduino15/packages/` (not verified by us) |
+
+Restart the IDE, select the breadboard board, and burn the bootloader once before uploading the
+sketch. For reference, the definition sets `f_cpu` to 8 MHz and the fuses to `low = 0xE2`,
+`high = 0xDA`, `extended = 0x05`, i.e. internal RC without the divide-by-8 prescaler and brown-out
+detection at 2.7 V.
 
 The 8 MHz clock is not arbitrary: it divides exactly into the 100 kbaud UART rate (UBRR = 4 with
 U2X0 cleared), so the link runs with no baud-rate error. A clock that does not divide exactly would
