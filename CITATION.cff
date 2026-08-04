@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: Protocol-Flexible Custom NFC Sensor Tag
+message: If you use this work, please cite the associated paper.
+type: software
+authors:
+  - family-names: Maeda
+    given-names: Riku
+    affiliation: Kochi University of Technology
+  - family-names: Noda
+    given-names: Akihito
+    affiliation: Kochi University of Technology
+    orcid: "https://orcid.org/TBD"
+repository-code: "https://github.com/TBD/TBD"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Protocol-Flexible Custom NFC for Wire-Free Wearable Sensor Networks"
+  authors:
+    - family-names: Maeda
+      given-names: Riku
+    - family-names: Noda
+      given-names: Akihito
+  journal: "IEEE Sensors Letters"
+  year: 2026
+  doi: TBD

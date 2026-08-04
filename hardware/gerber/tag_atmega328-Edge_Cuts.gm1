@@ -1,0 +1,23 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,8.0.9*
+G04 #@! TF.CreationDate,2026-08-02T14:26:52+09:00*
+G04 #@! TF.ProjectId,tag_atmega328,7461675f-6174-46d6-9567-613332382e6b,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Profile,NP*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.9) date 2026-08-02 14:26:52*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 #@! TA.AperFunction,Profile*
+%ADD10C,0.050000*%
+G04 #@! TD*
+G04 APERTURE END LIST*
+D10*
+X63500000Y-82500000D02*
+X93500000Y-82500000D01*
+X93500000Y-112500000D01*
+X63500000Y-112500000D01*
+X63500000Y-82500000D01*
+M02*
