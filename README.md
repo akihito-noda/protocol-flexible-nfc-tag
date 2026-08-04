@@ -78,13 +78,7 @@ We tested this on Windows only. The Linux and macOS paths are the standard Ardui
 for those platforms, but we have not confirmed that the procedure works there.
 
 Restart the IDE, select the breadboard board, and burn the bootloader once before uploading the
-sketch. For reference, the definition sets `f_cpu` to 8 MHz and the fuses to `low = 0xE2`,
-`high = 0xDA`, `extended = 0x05`, i.e. internal RC without the divide-by-8 prescaler and brown-out
-detection at 2.7 V.
-
-The 8 MHz clock is not arbitrary: it divides exactly into the 100 kbaud UART rate (UBRR = 4 with
-U2X0 cleared), so the link runs with no baud-rate error. A clock that does not divide exactly would
-introduce a timing offset that the RZ decoder has no way to absorb.
+sketch. 
 
 Two points that are easy to miss when reading the code:
 
