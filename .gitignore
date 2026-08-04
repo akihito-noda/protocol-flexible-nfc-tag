@@ -1,0 +1,16 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+
+# KiCad backups and autosave
+*-backups/
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+fp-info-cache
+
+# Arduino build output
+build/
+*.hex
+*.elf
