@@ -72,7 +72,10 @@ into the Arduino data directory instead, giving `.../packages/breadboard/avr/` c
 | --- | --- |
 | Windows | `%LOCALAPPDATA%\Arduino15\packages\` |
 | Linux | `$HOME/.arduino15/packages/` |
-| macOS | `~/Library/Arduino15/packages/` (not verified by us) |
+| macOS | `~/Library/Arduino15/packages/` |
+
+We tested this on Windows only. The Linux and macOS paths are the standard Arduino data directories
+for those platforms, but we have not confirmed that the procedure works there.
 
 Restart the IDE, select the breadboard board, and burn the bootloader once before uploading the
 sketch. For reference, the definition sets `f_cpu` to 8 MHz and the fuses to `low = 0xE2`,
