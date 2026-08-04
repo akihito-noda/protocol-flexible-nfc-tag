@@ -9,8 +9,7 @@ authors:
   - family-names: Noda
     given-names: Akihito
     affiliation: Kochi University of Technology
-    orcid: "https://orcid.org/TBD"
-repository-code: "https://github.com/TBD/TBD"
+repository-code: "https://github.com/akihito-noda/protocol-flexible-nfc-tag"
 license: MIT
 preferred-citation:
   type: article
@@ -22,4 +21,3 @@ preferred-citation:
       given-names: Akihito
   journal: "IEEE Sensors Letters"
   year: 2026
-  doi: TBD
